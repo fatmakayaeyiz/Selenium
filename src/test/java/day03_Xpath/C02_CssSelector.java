@@ -10,7 +10,7 @@ import java.util.List;
 
 public class C02_CssSelector {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
@@ -23,9 +23,9 @@ public class C02_CssSelector {
         //Sayfa basliginin “Spend less” ifadesi icerdigini test edin
         String actualTitle = driver.getTitle();
         String arananKelime = "Spend less";
-        if (actualTitle.contains(arananKelime)){
+        if (actualTitle.contains(arananKelime)) {
             System.out.println("Title Testi PASSED");
-        }else System.out.println("Title Testi FAILED");
+        } else System.out.println("Title Testi FAILED");
 
         //Gift Cards sekmesine basin
         driver.findElement(By.cssSelector("a[href='/gift-cards/b/?ie=UTF8&node=2238192011&ref_=nav_cs_gc']")).click();
@@ -49,9 +49,9 @@ public class C02_CssSelector {
 
         //Urun ucretinin 25$ oldugunu test edin
         WebElement urunUcreti = driver.findElement(By.cssSelector("span[id='gc-live-preview-amount']"));
-        if (urunUcreti.getText().equals("$25.00")){
+        if (urunUcreti.getText().equals("$25.00")) {
             System.out.println("TEST PASSED");
-        }else System.out.println("TEST FAILED");
+        } else System.out.println("TEST FAILED");
 
         //Sayfayi kapatin
         driver.close();
